@@ -1,3 +1,22 @@
+/*
+
+Task:
+
+# Brackets
+
+Implement function check (text) which checks whether brackets within text are
+correctly nested. You need to consider brackets of three kinds: (), [], {}.
+
+Examples:
+   
+check("a(b)") -> true
+check("[{}]") -> true
+check("[(]") -> false
+check("}{") -> false
+check("z([{}-()]{a})") -> true
+check("") -> true
+
+*/
 
 public class TestDriveCheckBrackets {
 
@@ -5,12 +24,15 @@ public class TestDriveCheckBrackets {
 
         Brackets brackets = new Brackets();
 
-        System.out.println(brackets.check("a(b)"));
-        System.out.println(brackets.check("[{}]"));
-        System.out.println(brackets.check("[(]"));
-        System.out.println(brackets.check("}{"));
-        System.out.println(brackets.check("z([{}-()]{a})"));
-        System.out.println(brackets.check(""));
+        String [] textWithBrackets = {"a(b)","[{}]","[(]","}{","z([{}-()]{a})",""};
+
+        for (int i = 0; i < textWithBrackets.length; i++){
+            System.out.print("Brackets within text: '" + textWithBrackets[i] + "' --> ");
+            if (brackets.check(textWithBrackets[i])){
+                System.out.println(" are correctly nested");
+            } else System.out.println(" are uncorrectly nested");
+
+        }
     }
 
 }
